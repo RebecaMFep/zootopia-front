@@ -1,13 +1,18 @@
 <script setup>
+import Header from '@/components/home/header.vue';
+
+
+
 </script>
 
 <template>
-  <h1>Hola home</h1>
-  <p>estoy haciendo una prueba Ana espero que estes atenta pero veo que no dices nada </p>
+    <Header />    
+    
+  
 </template>
 
-<style lang="scss" scoped>
 
 
 
-</style>
+
+    

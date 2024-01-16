@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <template>
@@ -7,8 +7,13 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+
+    
  
 
   <RouterView />
 </template>
-<style ></style>
+<style lang="sass" scoped>
+
+  
+</style>
