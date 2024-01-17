@@ -1,14 +1,25 @@
 <script setup>
+
 import { RouterLink, RouterView } from 'vue-router'
+import FooterComp from './components/FooterComp.vue';
+import LoginForm from './components/auth/LoginForm.vue';
+
 </script>
 
 <template>
       <nav>
+
         <RouterLink to="/">Login</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+      
       </nav>
- 
+      <main>
+        <RouterView />
+        <FooterComp />
+      </main>
 
-  <RouterView />
 </template>
-<style ></style>
+
+<style lang="scss" scoped>
+
+</style>

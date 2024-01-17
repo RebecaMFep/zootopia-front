@@ -1,8 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+//import { useAuthStore } from '../../stores/auth'
 
-import {useAuthStore} from '../stores/auth.js'
+import {useAuthStore} from '@/components/auth/LoginForm.vue'
 
 const username = ref('')
 const password = ref('')
@@ -14,30 +15,38 @@ const store = useAuthStore()
 
 function login() {
 
-  if (username.value == store.user.username) {
-    // && password.value == store.user.password
-      store.user.isAuthenticated = true
+  if (username.value == store.user.username && password.value == store.user.password) {
+      store.user.isAuthenticated = true;
       const redirectPath = route.query.redirect || '/about'
       router.push(redirectPath)
-  }
+
+    } else {
+      showAlert.value = true;
+    }
 
 }
 
 </script>
  
 <template>
-  <h1>HOLA SOY ANA</h1>
-
+  
   <div>
     <form @submit.prevent="login">
-      <label for="username">Username</label>
+      <label for="username">EMAIL</label>
       <input type="text" name="username" id="username" v-model="username">
 
-      <label for="password">Password</label>
+      <label for="password">PASSWORD</label>
       <input type="password" name="password" id="password" v-model="password"> 
+  
+      <button type="submit">SIGN IN</button>
 
-      <button type="submit">Submit</button>
+      <p>DONT HAVE AN ACCOUNT?</p>
+      <div v-if="showAlert" class="alert alert-danger mt-3" role="alert">
+         Invalid email or password. Please try again.
+      </div>
+      
 
+      
     </form>
   </div>
 
