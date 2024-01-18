@@ -13,13 +13,12 @@
 
       <div class="column">
         <h4><u>Social Media</u></h4>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/fb.png" alt="fb">  facebook</a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/twter.png" alt="twter">  twitter</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/ig.png" alt="ig">  instagram</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/fb.png" alt="fb">    facebook    </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/twter.png" alt="twter">   twitter      </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/ig.png" alt="ig">     instagram      </a>
       </div>
+      <div><h4 class="year">2024©</h4></div>
     </div>
-
-    <div><h4 class="year">2024©</h4></div>
 
   </footer>
 </template>
@@ -28,13 +27,12 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
     }
 
     footer {
       background-color: #386F5B;
       color: #fff;
-      padding: 30px;
+      padding: 20px;
     }
 
     .columns {
@@ -43,14 +41,11 @@
       max-width: 1200px;
       margin-bottom: 10px;
       text-align: start;
+      font-size: 80%;
       font-family:Verdana, Geneva, Tahoma, sans-serif;
   
-
-    .column {
-      //width: 48%;
-    }
     .img {
-      width: 10%;
+      width: 8%;
     }
   }
     .year{

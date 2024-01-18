@@ -6,7 +6,7 @@ export const useAuthStore = defineStore('auth', () => {
 
     const user = reactive (
         {
-            username: 'administrador',
+            username: 'administrador@zootopia.com',
             password: 'holaborja',
             isAuthenticated: false
         }
