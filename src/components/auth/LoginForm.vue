@@ -1,9 +1,9 @@
 <script setup>
+import { useAuthStore } from '@/stores/auth';
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-//import { useAuthStore } from '../../stores/auth'
 
-import {useAuthStore} from '@/components/auth/LoginForm.vue'
+
 
 const username = ref('')
 const password = ref('')
@@ -29,7 +29,6 @@ function login() {
 </script>
  
 <template>
-  
   <div>
     <form @submit.prevent="login">
       <label for="username">EMAIL</label>
@@ -41,19 +40,24 @@ function login() {
       <button type="submit">SIGN IN</button>
 
       <p>DONT HAVE AN ACCOUNT?</p>
+      
       <div v-if="showAlert" class="alert alert-danger mt-3" role="alert">
          Invalid email or password. Please try again.
       </div>
-      
-
-      
     </form>
   </div>
-
+  
 </template>
 
 <style lang="scss" scoped>
- 
 
 
+
+
+ * {
+background-image: url("../../assets/photos/fondo_login.jpeg");
+background-size: cover;
+background-repeat: no-repeat;
+height: 100vh;
+}
 </style>
