@@ -21,10 +21,21 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue')
-    }
+    },
+
+    {
+      path: '/AddView',
+      name: 'addView',
+      component: () => import('../views/AddView.vue')
+    },
+
+    {
+      path: '/ModifyView',
+      name: 'modifyView',
+      component: () => import('../views/ModifyView.vue')
+    },
   ]
 })
-
 
   router.beforeEach((to,from) => {
 

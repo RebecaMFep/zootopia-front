@@ -2,7 +2,6 @@
 
 import { RouterLink, RouterView } from 'vue-router'
 import FooterComp from './components/FooterComp.vue';
-import LoginForm from './components/auth/LoginForm.vue';
 
 </script>
 

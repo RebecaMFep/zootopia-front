@@ -5,9 +5,8 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import '@mdi/font/css/materialdesignicons.css'
-
-import 'vuetify/styles'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
