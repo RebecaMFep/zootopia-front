@@ -1,88 +1,111 @@
 <script setup>
+// export default {
+//   methods: {
+//     async generateSpecimen() {
+//       try {
+//         // Realizar solicitud a la OpenAI GPT-3 API para generar un especimen
+//         const response = await this.$axios.post('URL_DE_TU_API', {
+//           prompt: 'Generar un nuevo especimen para Zootopia',
+//           // Otros parámetros de solicitud según la documentación de la API
+//         });
 
+//         // Manejar la respuesta de la API aquí
+
+//         console.log('Respuesta de la API:', response.data);
+//       } catch (error) {
+//         console.error('Error al llamar a la API:', error);
+//       }
+//     },
+//     logout() {
+//       // Lógica para cerrar sesión
+//       console.log('Cerrar sesión');
+//     },
+//   },
+// };
 </script>
 <template>
-    <v-app>
-        <v-container class="DesignHeader">
-            <v-app-bar density="prominent" scroll-behavior="hide fade-image" scroll-threshold="1000">
+   
+<div class="containAll">
 
-                <v-container class="ComponentsHeader">
-                    <v-toolbar-items>
-                        <v-container class="Title">
-                            <div class="text-h5">Zootopía</div>
-                        </v-container>
-
-                        <v-container class="Button1">
-                            <v-btn variant="elevated" color="#386F5B" density="default" size="x-large"> Log out
-
-                            </v-btn>
-                        </v-container>
-                        <v-container class="Button2">
-                            <v-btn variant="elevated" color="#386F5B" density="default" size="x-large">
-
-                                Add specimen
-                            </v-btn>
-                        </v-container>
-
-                    </v-toolbar-items>
-                </v-container>
-            </v-app-bar>
-        </v-container>
-    </v-app>
+  <header class="app-header">
+    <div class="title">Zootopia</div>
+    <div class="buttons">
+      <button class="rounded-button" @click="generateSpecimen">ANIMALS</button>
+      <button class="rounded-button" @click="logout">LOG OUT</button>
+    </div>
+  </header>
+</div>
 </template>
 
-
-<!-- <template>
-    <v-toolbar image="">
-        <template v-slot:prepend>
-            <div class="text-h5">Zootopía</div>
-        </template>
-        <v-spacer></v-spacer>
-
-        
-
-        <v-toolbar-items>
-
-            <v-container>
-                <v-btn variant="tonal" color="#386F5B"> Log out
-                </v-btn>
-            </v-container>
-
-            <v-container>
-                <v-btn prepend-icon="$plus" variant="tonal" color="#386F5B">
-                    Add specimen
-                </v-btn>
-            </v-container>
-
-        </v-toolbar-items>
-
-        <v-divider vertical></v-divider>
-    </v-toolbar>
-</template> -->
-
 <style lang="scss" scoped>
-.DesignHeader {
-    background-image: url(../../assets/images/TIN-319\ Zootopia_large.jpg);
+header {
+  background-image: url("../../assets/images/TIN-319_Zootopia_large.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 250px;
+  @media (max-width: 800px) {
     background-size: cover;
-    background-position: center;
+    margin: 0 auto;
+  
+   
+  }
 }
 
-.Title {
-    display: flex;
 
-
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.Button1 {
+.title {
+  font-size: 58px;
+  margin: 0;
+  color: black;
+  font-family: 'Libre Barcode 39 Text', system-ui;
+  
+  @media (max-width: 660px) {
+    font-size: 44px;
+  }
+  @media (max-width: 555px) {
+    font-size: 38px;
+  }
+  @media (max-width: 555px) {
     display: flex;
-    justify-content: end;
-
-
+    justify-content: center;
+  }
 }
 
-.Button2 {
-    display: flex;
-    justify-content: end;
+.buttons {
+  display: flex;
+  align-items: flex-end; 
+  margin-top: 130px; 
+  
+  
+}
 
+.rounded-button {
+  margin-left: 10px;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 25px;
+  background-color: #386F5B;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Langar', system-ui;
+
+  &:hover {
+    background-color: #6eaf97;
+  }
+
+  @media (max-width: 660px) {
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
 }
 </style>

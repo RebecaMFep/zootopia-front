@@ -4,8 +4,8 @@
 
 <template>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Login</RouterLink>
+        <RouterLink to="/Home">Home</RouterLink>
       </nav>
 
     
