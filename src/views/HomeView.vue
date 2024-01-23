@@ -1,13 +1,22 @@
 <script setup>
+import Header from '@/components/Home/Header.vue';
+import MainHome from '@/components/Home/MainHome.vue';
+import SpeciesCountVue from '@/components/home/SpeciesCount.vue';
+
+
+
 </script>
 
 <template>
-  <h1>Hola home</h1>
-  <p>estoy haciendo una prueba Ana espero que estes atenta pero veo que no dices nada </p>
+    <Header />   
+    <SpeciesCountVue /> 
+    <MainHome />
+    
+    
+    
+  
 </template>
-
 <style lang="scss" scoped>
 
 
-
-</style>
+  </style>
