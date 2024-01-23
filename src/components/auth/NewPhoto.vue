@@ -17,7 +17,7 @@
     },
     methods: {
       onFileChange(e) {
-        const file = e.target.files[0](https://www.smashingmagazine.com/2022/03/drag-drop-file-uploader-vuejs-3/);
+        const file = e.target.files[0]("https://www.smashingmagazine.com/2022/03/drag-drop-file-uploader-vuejs-3/");
         if (!file) return;
    
         const reader = new FileReader();
