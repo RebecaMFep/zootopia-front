@@ -1,136 +1,153 @@
-<script setup>
+<script>
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import { useCountryStore } from '../../stores/storeCountries';
-//import { useSpecieStore } from '../../stores/storeSpecies';
-//import { useGenderStore } from '../../stores/storeGenders';
-//import { onMounted, onBeforeMount } from 'vue';
+export default {
+    data() {
+      return {
+        form: {
+          photo: null,
+          name: '',
+          genre: null,
+          family: null,
+          specie: null,
+          country: null,
+          date: '',
+          checked: []
+        },
+        genre: [{ text: 'Select One', value: null }, 'Male', 'Female'],
+        show: true,
+      }
+    },
+    methods: {
+      onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.form))
+      },
+      methods: {
+   onFileChange(e) {
+     const file = e.target.files[0];
+     if (!file) return;
 
+     const reader = new FileReader();
+     reader.onload = (e) => {
+       this.photo = e.target.result;
+     };
+     reader.readAsDataURL(file);
+   },
+ },
 
-//const store = useCountryStore();
-//const storeSpecie = useSpecieStore();
-//const storeGender = useGenderStore();
-//onBeforeMount(async () => {
-  //await store.fetchCountries();
-  //await storeSpecie.fetchSpecies();
-  ///await storeGender.fetchGenders();
-//})
+      onReset(event) {
+        event.preventDefault()
+        this.form.photo = null
+        this.form.name = ''
+        this.form.genre = null
+        this.form.family = null
+        this.form.specie = null
+        this.form.country = ''
+        this.form.date = ''
 
+        this.form.checked = []
+        
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
+      },
 
-let specimen = {
-  name: "",
-  id_gender: "",
-  id_country: "",
-  id_specie: "",
-  date: "",
-}
-
-async function save() {
-
-  if (
-    specimen.name == "") {
-    alert("Name is needed")
-    return
+      closeForm() {
+     
+      }
+    }
   }
-  if (
-    specimen.date == "") {
-    alert("Date is needed")
-    return
-  }
-  if (
-    specimen.id_specie == "") {
-    alert("Specie is needed")
-    return
-  }
-  if (
-    specimen.id_country == "") {
-    alert("Country is needed")
-    return
-  }
-  if (
-    specimen.id_gender == "") {
-    alert("Gender is needed")
-    return
-  }
-
-  //const payload = JSON.stringify(this.specimen);
-  //const url = "http://localhost:8080/api/specimens";
-  //const r = await fetch(url, {
-    //method: "POST",
-    //body: payload,
-    //headers: {
-      //"Content-type": "application/json",
-    //}
- // });
-  //const response = r;
-  //if (response) {
-    //alert("Added " + specimen.name);
-    //resetForm();
-  //} else {
-    //alert("An error has occurred.\nPlease try again after a few minutes.");
-  //}
-//}
-
-//function resetForm(){
-  //document.getElementById("addSpecimen").reset();
-//}
-
-
 </script>
 
 <template>
-<body>
-    <h1>HOLA SOY EL ADD </h1>
-    <div>
-    <form class="row g-3" id="addSpecimen">
-    <div class="col-10">
-      <label for="inputName" class="form-label ms-2">Nombre</label>
-      <input v-model="specimen.name" type="text" class="form-control" id="inputName">
-    </div>
-    <div class="col-10">
-      <label for="inputFamily" class="form-label ms-2">Familia</label>
-      <select id="inputState2" class="form-select">
-        <option selected></option>
-        <option>Cánidos</option>
-        <option>Reptiles</option>
-        <option>Mustelids</option>
-        <option>Leporidae</option>
-      </select>
-    </div>
-    <div class="col-10">
-      <label for="inputGender" class="form-label ms-2">Género</label>
-      <select v-model="specimen.id_gender" id="inputGender" class="form-select">
-        <option selected value="">Select a gender</option>
-        <option :value="gender.id" v-for="gender in storeGender.Genders" :key="gender">{{ gender.name }}</option>
-      </select>
-    </div>
-    <div class="col-10">
-      <label for="inputSpecie" class="form-label ms-2">Especie</label>
-      <select v-model="specimen.id_specie" id="inputSpecie" class="form-select">
-        <option selected value="">Select a specie</option>
-        <option :value="specie.id" v-for="specie in storeSpecie.Species" :key="specie">{{ specie.name }}</option>
-      </select>
-    </div>
-    <div class="col-10">
-      <label for="inputCountry" class="form-label ms-2">País de origen</label>
-      <select v-model="specimen.id_country" id="inputCountry" class="form-select">
-        <option selected value="">Select a country</option>
-        <option :value="country.id" v-for="country in store.Countries" :key="country">{{ country.name }}</option>
-      </select>
-    </div>
-    <div class="col-10">
-      <label for="inputDate" class="form-label ms-2">Fecha de ingreso</label>
-      <input v-model="specimen.date" id="startDate" class="form-control" type="date" />
-    </div>
+ 
+ <form @submit.prevent="onSubmit">
+  <h1> ADD A NEW SPECIE</h1>
+   <div class="row">
+     <div class="column">
+    
+      
 
-    <div class="col-10 d-flex justify-content-end">
-      <button type="reset" class="btn btn-warning" id="resetBtn">Reset</button>
-      <button type="button" class="btn btn-success" id="addBtn" @click="save()">Add</button>
-    </div>
+      <input type="file" id="photo" />
+      <label for="name">Name</label> 
+      <input type="text" id="name" v-model="name" placeholder="Name" required />
+     </div>
+     <div class="column">
+
+      <label for="genre">Genre</label>
+       <input type="text" id="genre" v-model="form.genre"
+          :options="genre"
+          required placeholder="Genre" />
+      
+      <label for="family">Family</label> 
+       <input type="text" id="family" v-model="family" placeholder="Family" required />
+       
+       <label for="Specie">Specie</label> 
+       <input type="text" id="Specie" v-model="specie" placeholder="Specie" required />
+       
+       <label for="Country">Country</label> 
+       <input type="text" id="Country" v-model="country" placeholder="Country" required />
+
+       <label for="date">Admission's date</label> 
+       <input type="date" id="date" v-model="date" required /> 
+      </div>
+   </div>
+   <div class="button">
+   <button type="Add">Add</button>
+   <button type="reset" @click="deleteAnimal">Reset</button>
+   <button type="button" @click="closeForm">Cancel</button>
+  </div>
   </form>
-</div>
 
-</body>
 </template>
 <style lang="scss" scoped>
 
+h1{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+form{
+  border: 10px solid #386F5B;
+  border-radius: 28px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20PX;
+}
+.row {
+ display: flex;
+ justify-content: space-between;
+}
+
+.column {
+ width: 50%;
+}
+
+input[type=text], input[type=file], input[type=date] {
+ border: 2px solid #386F5B;
+ background-color: #D9D9D9;
+ border-radius: 25px;
+ padding: 5px;
+ margin-bottom: 10px;
+ display: flex;
+justify-content: center;
+}
+
+button {
+ background-color: #D9D9D9;
+ border: 2px solid #386F5B;
+ border-radius: 50px;
+ padding: 9px 20px;
+ margin-top: 10px;
+ cursor: pointer;
+ display: flex;
+justify-content: center;
+align-items: center;
+}
+
+button:hover {
+ background-color: #386F5B;
+}
 </style>
+
