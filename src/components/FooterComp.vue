@@ -50,12 +50,12 @@
       margin-bottom: 10px;
       text-align: start;
       font-size: 80%;
-    
+    }
   
     .img {
       width: 8%;
     }
-  }
+
     .year{
       text-align: right;
     }
@@ -63,4 +63,6 @@
     h4{
       font-size: 120%;
     }
+
+  
 </style>

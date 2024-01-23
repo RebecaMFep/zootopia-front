@@ -1,21 +1,19 @@
-<script setup>
+<script setup> 
 import Header from '@/components/Home/Header.vue';
+
+import SpeciesCount from '@/components/home/SpeciesCount.vue';
 import ModifyComp from '@/components/ModifyComp.vue';
-
-
-
 </script>
 
 <template>
-    <Header />   
-    <SpeciesCountVue /> 
-    <MainHome />
-    
-    
-    
+    <main>
+      <Header /> 
+      <SpeciesCount />  
+      <ModifyComp />
   
-</template>
+    </main>
+  </template>
+
 <style lang="scss" scoped>
 
-
-  </style>
+</style>

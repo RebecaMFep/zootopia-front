@@ -8,7 +8,7 @@ export const useGenderStore = defineStore({
   actions: {
     async fetchGenders() {
       const response = await fetch(
-        "http://localhost:8080/api/genders"
+        "http://localhost:8080/api/v1/genders"
       );
       const data = await response.json();
 

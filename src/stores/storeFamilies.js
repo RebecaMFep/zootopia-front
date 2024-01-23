@@ -8,7 +8,7 @@ export const useFamilyStore = defineStore({
   actions: {
     async fetchFamilies() {
       const response = await fetch(
-        "http://localhost:8080/api/families"
+        "http://localhost:8080/api/v1/families"
       );
       const data = await response.json();
 
