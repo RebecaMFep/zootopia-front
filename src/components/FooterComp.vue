@@ -24,17 +24,25 @@
 </template>
 
 <style lang="scss" scoped>
-    body {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+    
+  body {
       margin: 0;
       padding: 0;
+      font-family: 'Inter', sans-serif;
     }
 
     footer {
       background-color: #386F5B;
       color: #fff;
       padding: 20px;
+     
     }
 
+    a {
+      text-decoration: none; 
+      color: inherit;
+    }
     .columns {
       display: flex;
       justify-content: space-around;
@@ -42,13 +50,17 @@
       margin-bottom: 10px;
       text-align: start;
       font-size: 80%;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
   
     .img {
       width: 8%;
     }
   }
     .year{
-      text-align: end;
+      text-align: right;
+    }
+
+    h4{
+      font-size: 120%;
     }
 </style>

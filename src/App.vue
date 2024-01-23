@@ -1,5 +1,4 @@
 <script setup>
-
 import { RouterLink, RouterView } from 'vue-router'
 import FooterComp from './components/FooterComp.vue';
 
@@ -13,6 +12,7 @@ import FooterComp from './components/FooterComp.vue';
       
       </nav>
       <main>
+        
         <RouterView />
         <FooterComp />
       </main>
