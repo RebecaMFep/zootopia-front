@@ -17,7 +17,7 @@ function login() {
 
   if (username.value == store.user.username && password.value == store.user.password) {
       store.user.isAuthenticated = true;
-      const redirectPath = route.query.redirect || '/about'
+      const redirectPath = route.query.redirect || '/Home'
       router.push(redirectPath)
 
     } else {

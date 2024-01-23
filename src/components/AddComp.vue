@@ -134,20 +134,20 @@ export default {
 form{
   border: 10px solid #386F5B;
   border-radius: 28px;
-  padding: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding: 3%;
+  margin-bottom: 2px;
+  margin-top: 2px;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.2em;
-  margin: 30px auto;
+ 
 }
 
 .photo-input button {
  display: flex;
  align-items: center;
  justify-content: center;
- width: 200px;
- height: 200px;
+ width: 5em;
+ height: 5em;
  border-radius: 50%;
  border: 2px solid #386F5B;
  background-color: #D9D9D9;
@@ -155,34 +155,37 @@ form{
 }
 
 .photo-input img {
- max-width: 100%;
- max-height: 100%;
- border-radius: 50%;
+  display: flex;
+  align-items: flex-end;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 50%;
 }
 
 .row {
  display: flex;
  justify-content: space-between;
+ padding: 2%;
 }
 .column {
-  flex: 2; 
+  flex: 1; 
   padding: 10px;
- width: 50%;
-}
-.column left-column{
   display: flex;
-  align-items: flex-end;
-
+  flex-direction: column; 
+  width: 50%;
 }
 
+.left-column{
+  margin-right: 50px;
+}
 h1{
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 1px;
   font-family: 'Big Shoulders Stencil Text', sans-serif;
   -webkit-text-stroke: 1.5px black;
   color: #9EC4B6;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
 }
 
@@ -190,19 +193,22 @@ input[type=text], input[type=file], input[type=date] {
  border: 2px solid #386F5B;
  background-color: #D9D9D9;
  border-radius: 25px;
- padding: 5px;
+ padding: 4px;
  margin-bottom: 10px;
  display: flex;
-justify-content: center;
+ width: 100%;
+ 
 }
 
 button {
  background-color: #D9D9D9;
  border: 2px solid #386F5B;
  border-radius: 50px;
- padding: 9px 20px;
+ padding: 3px 20px;
  margin-top: 10px;
+ margin-left: 4%;
  cursor: pointer;
+
 
 }
 

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import { useAuthStore } from '@/stores/auth'
 import AddView from '../views/AddView.vue'
+import Home from '../views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,12 @@ const router = createRouter({
     //},
     
     {
+      path: '/Home',
+      name: 'HomeView',
+      component: () => import('../views/HomeView.vue'),
+    },
+
+    {
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue')
@@ -35,6 +42,8 @@ const router = createRouter({
       name: 'modifyView',
       component: () => import('../views/ModifyView.vue')
     },
+
+  
   ]
 })
 

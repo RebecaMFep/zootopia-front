@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import FooterComp from './components/FooterComp.vue';
+import LoginForm from './components/auth/LoginForm.vue';
+import HomeView from './views/HomeView.vue';
 
 </script>
 
@@ -8,7 +10,7 @@ import FooterComp from './components/FooterComp.vue';
       <nav>
 
         <RouterLink to="/">Login</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/Home">Home</RouterLink>
       
       </nav>
       <main>
@@ -16,9 +18,13 @@ import FooterComp from './components/FooterComp.vue';
         <RouterView />
         <FooterComp />
       </main>
+    
+
+    
+ 
 
 </template>
 
 <style lang="scss" scoped>
-
+  
 </style>
