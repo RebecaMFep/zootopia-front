@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { Input, initMDB } from "mdb-ui-kit";
 
 initMDB({ Input });
@@ -23,7 +23,7 @@ searchButton.addEventListener('click', () => {
     <i class="fas fa-search"></i>
   </button>
 </div>
-</template>
+</template> -->
 
 
 import { defineStore } from "pinia";

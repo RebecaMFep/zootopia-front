@@ -144,6 +144,10 @@ function returnFamilyName(idSpecie) {
   </div>    
 </template>
 
+<!-- <div v-if="showAlert" class="alert alert-danger mt-3" role="alert">
+    Invalid username or password. Please try again.
+ </div> -->
+
 <style lang="scss">
  
 .container {
