@@ -1,16 +1,15 @@
 <script setup>
 
-
 import { onBeforeMount } from "vue";
 
-const store = useSpecimenStore();
+const store = useAnimalStore();
 const storeFamily = useFamilyStore();
 const storeSpecie = useSpecieStore();
 const storeGender = useGenderStore();
 const storeCountry = useCountryStore();
 
 onBeforeMount(async () => {
-  await store.fetchSpecimens();
+  await store.fetchAnimals();
   await storeFamily.fetchFamilies();
   await storeSpecie.fetchSpecies();
   await storeGender.fetchGenders();
@@ -53,6 +52,7 @@ function returnFamilyName(idSpecie) {
   let familyName = family[0].name;
   return familyName;
 }
+
 </script>
 
 <template>
