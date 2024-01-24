@@ -1,17 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AddViewVue from '@/views/AddView.vue';
-import ModifyViewVue from '@/views/ModifyView.vue';
-import LoginViewVue from '@/views/LoginView.vue';
+import AddView from '@/views/AddView.vue';
+import ModifyView from '@/views/ModifyView.vue';
+import LoginView from '@/views/LoginView.vue';
+import { useAuthStore } from '@/stores/auth'
+import ListView from '@/views/ListView.vue'
 const router = createRouter({
 history: createWebHistory(import.meta.env.BASE_URL),
 routes: [
   {
     path: '/',
     name: 'login',
-    component: LoginViewVue,
+    component: LoginView,
   },  
   {
-    path: '/home',
+    path: '/Home',
     name: 'HomeView',
     component: () => import('../views/HomeView.vue'),
   },
@@ -19,18 +21,19 @@ routes: [
     path: '/Add',      
     name: 'Add',
     // component: () => import('../views/AddView.vue'),
-    component: AddViewVue,
+    component: AddView,
   },
   {
     path: "/list",
     name: "list",
-    component: () => import('../views/ListView.vue')
+    // component: () => import('../views/ListView.vue')
+    component: ListView,
   },
   {
     path: '/Modify',
     name: 'modify',
     // component: () => import('../views/ModifyView.vue')
-    component: ModifyViewVue,
+    component: ModifyView,
   },
 
   
