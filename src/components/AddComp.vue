@@ -129,7 +129,7 @@ function resetForm(){
       </div>
 
         <label for="inputFamily">Family</label> 
-          <select v-model="animal.id_family" id="inputFamily" class="form-select">
+          <select v-model="animal.family" id="inputFamily" class="form-select">
           <option selected></option>
           <option>Felids</option>
           <option>Canids</option>

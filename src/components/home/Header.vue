@@ -22,6 +22,18 @@
 //     },
 //   },
 // };
+
+/////////////////////////
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const logout = () => {
+  
+  const router = useRouter();
+  router.push('/');
+};
+
+//////////////////////////////////
 </script>
 <template>
    
