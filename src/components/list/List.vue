@@ -225,7 +225,7 @@ function returnFamilyName(idSpecie) {
   background-color: #8F1D1D;
   border: 1px solid black;
   border-radius: 25px;
-  cursor: pointer;
+  
 }
 
 </style>

@@ -2,7 +2,7 @@
 import Header from '@/components/Home/Header.vue';
 import MainHome from '@/components/Home/MainHome.vue';
 import SpeciesCountVue from '@/components/home/SpeciesCount.vue';
-
+import List from '@/components/list/List.vue';
 
 
 </script>
@@ -11,6 +11,7 @@ import SpeciesCountVue from '@/components/home/SpeciesCount.vue';
     <Header />   
     <SpeciesCountVue /> 
     <MainHome />
+    
     
     
     
