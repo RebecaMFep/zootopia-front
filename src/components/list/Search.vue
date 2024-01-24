@@ -25,7 +25,6 @@ searchButton.addEventListener('click', () => {
 </div>
 </template>
 
-soteAnimals
 
 import { defineStore } from "pinia";
 
@@ -35,7 +34,7 @@ export const useAnimalStore = defineStore({
     Animals: [],
   }),
   actions: {
-    async fetchSpecimens() {
+    async fetchAnimals() {
       const response = await fetch(
         "http://localhost:8080/api/animals"
       );
