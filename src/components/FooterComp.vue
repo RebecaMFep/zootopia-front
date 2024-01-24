@@ -1,0 +1,68 @@
+<script setup>
+
+</script>
+
+<template>
+  <footer>
+    <div class="columns">
+
+      <div class="column">
+        <h4><u>About Zootopia</u></h4>
+        <p>Somos una entidad enfocada en la reinserción de animales en peligro</p>
+      </div>
+
+      <div class="column">
+        <h4><u>Social Media</u></h4>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/fb.png" alt="fb">    facebook    </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/twter.png" alt="twter">   twitter      </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img class="img" src="../assets/photos/ig.png" alt="ig">     instagram      </a>
+      </div>
+      <div><h4 class="year">2024©</h4></div>
+    </div>
+
+  </footer>
+</template>
+
+<style lang="scss" scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+    
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    footer {
+      background-color: #386F5B;
+      color: #fff;
+      padding: 20px;
+     
+    }
+
+    a {
+      text-decoration: none; 
+      color: inherit;
+    }
+    .columns {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin-bottom: 10px;
+      text-align: start;
+      font-size: 80%;
+    }
+  
+    .img {
+      width: 8%;
+    }
+
+    .year{
+      text-align: right;
+    }
+
+    h4{
+      font-size: 120%;
+    }
+
+  
+</style>
